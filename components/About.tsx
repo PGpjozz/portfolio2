@@ -47,10 +47,10 @@ export default function About() {
 
             <motion.p variants={itemVariants} className="text-zinc-400 text-lg leading-relaxed mb-5">
               I&apos;m Miyelani Mashimbyi, a full-stack developer based in South Africa.
-              I kickstarted my career at <span className="text-indigo-400 font-medium">Greenrim Training Institute</span>,
-              where I spent 12 months shipping real-world web applications across the full stack.
-              My flagship project is <span className="text-indigo-400 font-medium">EduLink Intelligence</span> —
-              a multi-tenant school management SaaS platform with 5 user roles, built with Next.js, Prisma, PostgreSQL and NextAuth.
+              I completed a 12-month developer internship at <span className="text-indigo-400 font-medium">Greenrim Training Institute</span>,
+              where I gained hands-on experience building real-world web applications across the full stack.
+              Outside of that, I independently designed and built <span className="text-indigo-400 font-medium">EduLink Intelligence</span> —
+              a production-ready, multi-tenant school management SaaS platform with 5 user roles, powered by Next.js, Prisma, PostgreSQL and NextAuth.
             </motion.p>
 
             <motion.p variants={itemVariants} className="text-zinc-400 text-lg leading-relaxed mb-8">

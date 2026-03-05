@@ -6,22 +6,22 @@ import { Briefcase, Calendar, MapPin, ChevronRight } from "lucide-react";
 
 const experiences = [
   {
-    role: "Developer",
+    role: "Developer Intern",
     company: "Greenrim Training Institute",
     location: "South Africa",
     period: "2023 – 2024",
-    type: "Full-time",
+    type: "Internship",
     description:
-      "Worked as a developer at Greenrim Training Institute for 12 months. Primary achievement was building EduLink Intelligence — a production multi-tenant school management SaaS platform serving Providers, Principals, Teachers, Learners and Parents, deployed live on Vercel.",
+      "Completed a 12-month developer internship at Greenrim Training Institute, gaining hands-on experience building and maintaining real-world web applications across the full stack in a professional environment.",
     highlights: [
-      "Built EduLink Intelligence: a full multi-tenant school SaaS with 5 distinct user roles",
-      "Implemented multi-role NextAuth.js authentication (email + SA ID number login for learners)",
-      "Designed the full Prisma + PostgreSQL (Neon) schema: schools, users, classes, assessments, grades, attendance, billing, messaging, PTM bookings, AI insights, quizzes and assets",
-      "Built role-specific dashboards with MUI v7 and Recharts data visualisations",
-      "Integrated tiered billing system (Small / Medium / Large school tiers) with audit logging",
-      "Deployed and managed the production app on Vercel with Neon serverless PostgreSQL",
+      "Built and maintained internal web applications used daily by staff and students",
+      "Developed responsive UIs with HTML, CSS, JavaScript and React",
+      "Created and consumed RESTful APIs with Node.js and Express",
+      "Managed MySQL databases — schema design, queries and data integrity",
+      "Collaborated with the team using Git and GitHub for version control",
+      "Deployed projects to Vercel and assisted with basic server configuration",
     ],
-    tech: ["Next.js 16", "TypeScript", "Prisma", "PostgreSQL", "NextAuth.js", "MUI v7", "Recharts", "Vercel"],
+    tech: ["React", "Node.js", "Express", "MySQL", "JavaScript", "Git", "Vercel"],
     color: "from-indigo-500 to-violet-500",
   },
   {

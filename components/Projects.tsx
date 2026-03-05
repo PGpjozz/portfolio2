@@ -11,7 +11,7 @@ const projects = [
   {
     title: "EduLink Intelligence",
     description:
-      "A multi-tenant school management SaaS platform built for South African schools. Supports 5 user roles — Provider, Principal, Teacher, Learner (SA ID login) and Parent — each with their own dashboard. Features grading, attendance, timetables, billing tiers, messaging, parent-teacher meeting bookings, AI insights, quizzes, asset management and full audit logging.",
+      "A multi-tenant school management SaaS platform I independently designed and built from scratch. Supports 5 user roles — Provider, Principal, Teacher, Learner (SA ID login) and Parent — each with their own dashboard. Features grading, attendance, timetables, billing tiers, messaging, parent-teacher meeting bookings, AI insights, quizzes, asset management and full audit logging.",
     tags: ["Full-Stack"],
     tech: ["Next.js 16", "TypeScript", "Prisma", "PostgreSQL", "NextAuth.js", "MUI v7", "Recharts"],
     liveUrl: "https://edulink-app-ten.vercel.app/",
