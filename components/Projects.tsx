@@ -221,15 +221,11 @@ export default function Projects() {
                                   className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-indigo-500/15 border border-indigo-500/30 text-indigo-300 text-xs font-mono hover:bg-indigo-500/25 transition-colors mb-2">
                                   <ExternalLink className="w-3 h-3" /> /auth/provider-signin
                                 </a>
-                                <table className="w-full text-xs font-mono">
-                                  <tbody>
-                                    <tr>
-                                      <td className="py-1 pr-2 text-violet-400 w-20">Provider</td>
-                                      <td className="py-1 pr-2 text-emerald-400/90">provider@edulink.co.za</td>
-                                      <td className="py-1 text-zinc-400">edulink2026</td>
-                                    </tr>
-                                  </tbody>
-                                </table>
+                                <div className="rounded-lg bg-zinc-800/50 px-3 py-2 font-mono text-xs">
+                                  <span className="text-violet-400 font-semibold">Provider</span>
+                                  <div className="mt-1 text-emerald-400/90 break-all">provider@edulink.co.za</div>
+                                  <div className="text-zinc-400">edulink2026</div>
+                                </div>
                               </div>
                               <div className="px-4 py-3">
                                 <p className="text-xs text-zinc-500 mb-1.5 font-mono"><span className="text-zinc-400 font-semibold">All other roles</span> — standard page:</p>
@@ -237,17 +233,15 @@ export default function Projects() {
                                   className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-indigo-500/15 border border-indigo-500/30 text-indigo-300 text-xs font-mono hover:bg-indigo-500/25 transition-colors mb-2">
                                   <ExternalLink className="w-3 h-3" /> /auth/signin
                                 </a>
-                                <table className="w-full text-xs font-mono">
-                                  <tbody>
-                                    {project.credentials.filter((c) => c.role !== 'Provider').map((c) => (
-                                      <tr key={c.role} className="border-t border-zinc-800/40 first:border-0">
-                                        <td className="py-1.5 pr-2 text-violet-400 w-20">{c.role}</td>
-                                        <td className="py-1.5 pr-2 text-emerald-400/90 break-all">{c.login}</td>
-                                        <td className="py-1.5 text-zinc-400">{c.password}</td>
-                                      </tr>
-                                    ))}
-                                  </tbody>
-                                </table>
+                                <div className="flex flex-col gap-2 font-mono text-xs">
+                                  {project.credentials.filter((c) => c.role !== 'Provider').map((c) => (
+                                    <div key={c.role} className="rounded-lg bg-zinc-800/50 px-3 py-2">
+                                      <span className="text-violet-400 font-semibold">{c.role}</span>
+                                      <div className="mt-1 text-emerald-400/90 break-all">{c.login}</div>
+                                      <div className="text-zinc-400">{c.password}</div>
+                                    </div>
+                                  ))}
+                                </div>
                               </div>
                             </div>
                           </div>
