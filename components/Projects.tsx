@@ -235,42 +235,76 @@ export default function Projects() {
 
                   {'credentials' in project && project.credentials && (
                     <div className="mt-4 rounded-xl bg-zinc-900/70 border border-zinc-700/50 overflow-hidden">
-                      <div className="px-3 py-2 border-b border-zinc-700/50 flex items-center gap-2">
-                        <KeyRound className="w-3 h-3 text-indigo-400" />
-                        <span className="text-xs font-mono text-zinc-400 font-medium">Try the app</span>
+                      {/* Header */}
+                      <div className="px-4 py-2.5 border-b border-zinc-700/50 flex items-center gap-2">
+                        <KeyRound className="w-3.5 h-3.5 text-amber-400" />
+                        <span className="text-xs font-semibold text-zinc-300 uppercase tracking-wider">Test Login Credentials</span>
+                      </div>
+
+                      {/* Group 1 — Provider (different URL) */}
+                      <div className="px-4 py-3 border-b border-zinc-700/50">
+                        <p className="text-xs text-zinc-500 mb-2 font-mono">
+                          <span className="text-zinc-400 font-semibold">Provider role</span> — uses a separate sign-in page:
+                        </p>
                         <a
-                          href="https://edulink-app-ten.vercel.app/"
+                          href="https://edulink-app-ten.vercel.app/auth/provider-signin"
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="ml-auto text-xs font-mono text-indigo-400 hover:text-indigo-300 underline underline-offset-2"
+                          className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-indigo-500/15 border border-indigo-500/30 text-indigo-300 text-xs font-mono hover:bg-indigo-500/25 transition-colors mb-3"
                         >
-                          Open live app ↗
+                          <ExternalLink className="w-3 h-3" />
+                          edulink-app-ten.vercel.app/auth/provider-signin
                         </a>
-                      </div>
-                      <table className="w-full text-xs font-mono">
-                        <thead>
-                          <tr className="border-b border-zinc-700/40">
-                            <th className="text-left px-3 py-1.5 text-zinc-500 font-normal">Role</th>
-                            <th className="text-left px-3 py-1.5 text-zinc-500 font-normal">Login</th>
-                            <th className="text-left px-3 py-1.5 text-zinc-500 font-normal">Password</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          {project.credentials.map((c) => (
-                            <tr key={c.role} className="border-b border-zinc-800/60 last:border-0">
-                              <td className="px-3 py-2">
-                                <span className="text-violet-400">{c.role}</span>
-                              </td>
-                              <td className="px-3 py-2 text-emerald-400/90 break-all">{c.login}</td>
-                              <td className="px-3 py-2 text-zinc-400">{c.password}</td>
+                        <table className="w-full text-xs font-mono">
+                          <thead>
+                            <tr className="border-b border-zinc-800/60">
+                              <th className="text-left py-1 text-zinc-600 font-normal">Role</th>
+                              <th className="text-left py-1 text-zinc-600 font-normal">Email</th>
+                              <th className="text-left py-1 text-zinc-600 font-normal">Password</th>
                             </tr>
-                          ))}
-                        </tbody>
-                      </table>
-                      <div className="px-3 py-2 border-t border-zinc-700/50">
-                        <p className="text-zinc-600 text-xs font-mono">
-                          Provider → <span className="text-zinc-500">/auth/provider-signin</span> · others → <span className="text-zinc-500">/auth/signin</span>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td className="py-1.5 pr-3 text-violet-400">Provider</td>
+                              <td className="py-1.5 pr-3 text-emerald-400/90">provider@edulink.co.za</td>
+                              <td className="py-1.5 text-zinc-400">edulink2026</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+
+                      {/* Group 2 — All other roles (standard URL) */}
+                      <div className="px-4 py-3">
+                        <p className="text-xs text-zinc-500 mb-2 font-mono">
+                          <span className="text-zinc-400 font-semibold">All other roles</span> — use the standard sign-in page:
                         </p>
+                        <a
+                          href="https://edulink-app-ten.vercel.app/auth/signin"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-indigo-500/15 border border-indigo-500/30 text-indigo-300 text-xs font-mono hover:bg-indigo-500/25 transition-colors mb-3"
+                        >
+                          <ExternalLink className="w-3 h-3" />
+                          edulink-app-ten.vercel.app/auth/signin
+                        </a>
+                        <table className="w-full text-xs font-mono">
+                          <thead>
+                            <tr className="border-b border-zinc-800/60">
+                              <th className="text-left py-1 text-zinc-600 font-normal">Role</th>
+                              <th className="text-left py-1 text-zinc-600 font-normal">Email / ID</th>
+                              <th className="text-left py-1 text-zinc-600 font-normal">Password</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            {project.credentials.filter((c) => c.role !== "Provider").map((c) => (
+                              <tr key={c.role} className="border-b border-zinc-800/40 last:border-0">
+                                <td className="py-1.5 pr-3 text-violet-400">{c.role}</td>
+                                <td className="py-1.5 pr-3 text-emerald-400/90 break-all">{c.login}</td>
+                                <td className="py-1.5 text-zinc-400">{c.password}</td>
+                              </tr>
+                            ))}
+                          </tbody>
+                        </table>
                       </div>
                     </div>
                   )}
