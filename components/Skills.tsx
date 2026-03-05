@@ -84,7 +84,7 @@ export default function Skills() {
               Skills &amp; <span className="text-gradient">Technologies</span>
             </h2>
             <p className="text-zinc-400 text-lg max-w-2xl mx-auto">
-              A decade of hands-on experience across the full development spectrum
+              2 years of hands-on experience across the full development spectrum
             </p>
           </motion.div>
 
