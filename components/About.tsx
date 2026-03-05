@@ -7,8 +7,8 @@ import { Coffee, Award, Users, Zap } from "lucide-react";
 const stats = [
   { icon: Award, value: "2", label: "Years Experience", color: "from-indigo-500 to-violet-500" },
   { icon: Zap, value: "15+", label: "Projects Built", color: "from-violet-500 to-fuchsia-500" },
-  { icon: Users, value: "1", label: "Company Worked At", color: "from-cyan-500 to-blue-500" },
-  { icon: Coffee, value: "∞", label: "Cups of Coffee", color: "from-amber-500 to-orange-500" },
+  { icon: Users, value: "4", label: "Certifications", color: "from-cyan-500 to-blue-500" },
+  { icon: Coffee, value: "2025", label: "VUT Graduate", color: "from-emerald-500 to-teal-500" },
 ];
 
 const containerVariants = {
@@ -46,11 +46,12 @@ export default function About() {
             </motion.h2>
 
             <motion.p variants={itemVariants} className="text-zinc-400 text-lg leading-relaxed mb-5">
-              I&apos;m Miyelani Mashimbyi, a full-stack developer based in South Africa with 2 years of
-              experience gained through freelance work and personal projects.
+              I&apos;m Miyelani Mashimbyi, a full-stack developer based in South Africa. I hold a
+              <span className="text-indigo-400 font-medium"> Diploma in Information Technology from VUT (2025)</span> and
+              have earned certifications in CCNA, Azure Fundamentals, Dynamics 365 CRM and ITIL 4.
               My flagship project is <span className="text-indigo-400 font-medium">EduLink Intelligence</span> —
               a production-ready, multi-tenant school management SaaS platform I independently designed and built
-              from scratch, with 5 user roles, powered by Next.js, Prisma, PostgreSQL and NextAuth.
+              from scratch, powered by Next.js, Prisma, PostgreSQL and NextAuth.
             </motion.p>
 
             <motion.p variants={itemVariants} className="text-zinc-400 text-lg leading-relaxed mb-8">

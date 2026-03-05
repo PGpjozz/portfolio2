@@ -6,6 +6,39 @@ import { Briefcase, Calendar, MapPin, ChevronRight } from "lucide-react";
 
 const experiences = [
   {
+    role: "Diploma in Information Technology",
+    company: "Vaal University of Technology (VUT)",
+    location: "South Africa",
+    period: "2022 – 2025",
+    type: "Education",
+    description:
+      "Completed a Diploma in Information Technology at VUT, graduating in 2025. Built a strong academic foundation in software development, networking, systems analysis, databases and IT project management.",
+    highlights: [
+      "Studied software development, databases, networking and systems analysis",
+      "Completed practical modules in web development and application design",
+      "Graduated 2025",
+    ],
+    tech: ["Software Development", "Networking", "Databases", "Systems Analysis", "IT Project Management"],
+    color: "from-cyan-500 to-blue-500",
+  },
+  {
+    role: "Professional Certifications",
+    company: "Cisco · Microsoft · AXELOS",
+    location: "Online / Accredited Centres",
+    period: "2023 – 2025",
+    type: "Certifications",
+    description:
+      "Earned four industry-recognised certifications spanning networking, cloud, CRM and IT service management.",
+    highlights: [
+      "CCNA — Cisco Certified Network Associate (Networking fundamentals, routing & switching)",
+      "Azure Fundamentals (AZ-900) — Microsoft Azure cloud concepts and services",
+      "Dynamics 365 Fundamentals CRM — Microsoft customer engagement and CRM platform",
+      "ITIL 4 Foundation — IT service management best practices",
+    ],
+    tech: ["CCNA", "Azure Fundamentals", "Dynamics 365 CRM", "ITIL 4"],
+    color: "from-emerald-500 to-teal-500",
+  },
+  {
     role: "Full-Stack Developer",
     company: "Freelance & Personal Projects",
     location: "South Africa (Remote)",
@@ -71,10 +104,10 @@ export default function Experience() {
               Career Journey
             </span>
             <h2 className="text-4xl sm:text-5xl font-bold mb-4">
-              Work <span className="text-gradient">Experience</span>
+              Experience <span className="text-gradient">&amp; Education</span>
             </h2>
             <p className="text-zinc-400 text-lg max-w-2xl mx-auto">
-              2 years of building real products through freelance work and self-directed projects
+              Diploma in IT (VUT, 2025) · 4 certifications · 2 years building real projects
             </p>
           </motion.div>
 
