@@ -9,8 +9,8 @@ const contactInfo = [
   {
     icon: Mail,
     label: "Email",
-    value: "miyelanicliamte@gmail.com",
-    href: "mailto:miyelanicliamte@gmail.com",
+    value: "miyelaniclimate@gmail.com",
+    href: "mailto:miyelaniclimate@gmail.com",
     color: "from-indigo-500 to-violet-500",
   },
   {
@@ -58,10 +58,31 @@ export default function Contact() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setStatus("loading");
-    await new Promise((r) => setTimeout(r, 1500));
-    setStatus("success");
-    setFormState({ name: "", email: "", subject: "", message: "" });
-    setTimeout(() => setStatus("idle"), 4000);
+    try {
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({
+          access_key: process.env.NEXT_PUBLIC_WEB3FORMS_KEY,
+          from_name: formState.name,
+          email: formState.email,
+          subject: formState.subject || "New message from portfolio",
+          message: formState.message,
+        }),
+      });
+      const data = await res.json();
+      if (data.success) {
+        setStatus("success");
+        setFormState({ name: "", email: "", subject: "", message: "" });
+        setTimeout(() => setStatus("idle"), 5000);
+      } else {
+        setStatus("error");
+        setTimeout(() => setStatus("idle"), 4000);
+      }
+    } catch {
+      setStatus("error");
+      setTimeout(() => setStatus("idle"), 4000);
+    }
   };
 
   const inputClass =
@@ -141,6 +162,18 @@ export default function Contact() {
                     </div>
                     <h3 className="text-xl font-bold text-zinc-100 mb-2">Message Sent!</h3>
                     <p className="text-zinc-400">Thanks for reaching out. I&apos;ll get back to you soon.</p>
+                  </motion.div>
+                ) : status === "error" ? (
+                  <motion.div
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    className="flex flex-col items-center justify-center py-12 text-center"
+                  >
+                    <div className="w-16 h-16 rounded-full bg-red-500/20 border border-red-500/30 flex items-center justify-center mb-4">
+                      <Mail className="w-8 h-8 text-red-400" />
+                    </div>
+                    <h3 className="text-xl font-bold text-zinc-100 mb-2">Something went wrong</h3>
+                    <p className="text-zinc-400">Please email me directly at <a href="mailto:miyelaniclimate@gmail.com" className="text-indigo-400 hover:underline">miyelaniclimate@gmail.com</a></p>
                   </motion.div>
                 ) : (
                   <form onSubmit={handleSubmit} className="space-y-4">

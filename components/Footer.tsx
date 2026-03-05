@@ -6,7 +6,7 @@ import { Github, Linkedin, Mail, Code2, Heart, ArrowUp } from "lucide-react";
 const socials = [
   { icon: Github, href: "https://github.com/PGpjozz", label: "GitHub" },
   { icon: Linkedin, href: "https://linkedin.com", label: "LinkedIn" },
-  { icon: Mail, href: "mailto:miyelanicliamte@gmail.com", label: "Email" },
+  { icon: Mail, href: "mailto:miyelaniclimate@gmail.com", label: "Email" },
 ];
 
 const navLinks = [

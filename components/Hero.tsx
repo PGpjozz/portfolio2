@@ -7,7 +7,7 @@ import { TypeAnimation } from "react-type-animation";
 const socials = [
   { icon: Github, href: "https://github.com/PGpjozz", label: "GitHub" },
   { icon: Linkedin, href: "https://linkedin.com", label: "LinkedIn" },
-  { icon: Mail, href: "mailto:miyelanicliamte@gmail.com", label: "Email" },
+  { icon: Mail, href: "mailto:miyelaniclimate@gmail.com", label: "Email" },
 ];
 
 const floatVariants = {
