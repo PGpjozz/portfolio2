@@ -7,6 +7,7 @@ const techs = [
   "Tailwind CSS", "Material UI", "Framer Motion", "Recharts",
   "Node.js", "Express", "Prisma ORM", "NextAuth.js",
   "PostgreSQL", "Neon DB", "MySQL", "MongoDB",
+  "Python", "Django", "PHP", "Java",
   "Git", "GitHub", "Vercel", "REST APIs", "bcrypt", "JWT",
 ];
 

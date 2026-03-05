@@ -43,6 +43,17 @@ const categories = [
       { name: "Postman / API testing", level: 70 },
     ],
   },
+  {
+    title: "Languages & Frameworks",
+    color: "from-emerald-500 to-teal-500",
+    borderColor: "border-emerald-500/20",
+    skills: [
+      { name: "Python", level: 68 },
+      { name: "Django", level: 62 },
+      { name: "PHP", level: 60 },
+      { name: "Java", level: 58 },
+    ],
+  },
 ];
 
 const techBadges = [
@@ -50,6 +61,7 @@ const techBadges = [
   "Tailwind CSS", "MUI", "Framer Motion", "Recharts",
   "Node.js", "Express", "NextAuth.js", "Prisma ORM",
   "PostgreSQL", "MySQL", "MongoDB", "Neon DB",
+  "Python", "Django", "PHP", "Java",
   "Git", "GitHub", "Vercel", "REST APIs", "bcrypt",
 ];
 
@@ -88,7 +100,7 @@ export default function Skills() {
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-3 gap-6 mb-16">
+          <div className="grid sm:grid-cols-2 xl:grid-cols-4 gap-6 mb-16">
             {categories.map((cat) => (
               <motion.div
                 key={cat.title}
