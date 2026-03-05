@@ -31,21 +31,6 @@ const projects = [
     ],
   },
   {
-    title: "Greenrim Student Portal",
-    description:
-      "An internal web portal for Greenrim Training Institute allowing students to view course materials, submit assignments and track progress. Built and maintained during my 12-month role as developer.",
-    tags: ["Full-Stack"],
-    tech: ["React", "Node.js", "Express", "MySQL", "CSS"],
-    liveUrl: "#",
-    githubUrl: "https://github.com/PGpjozz",
-    stars: 4,
-    forks: 1,
-    featured: true,
-    flagship: false,
-    gradient: "from-violet-600/20 to-fuchsia-600/20",
-    accent: "border-violet-500/30",
-  },
-  {
     title: "Task Manager App",
     description:
       "A full-stack task management app with user authentication, CRUD operations, drag-and-drop ordering and due date reminders. Built to sharpen React and Node.js skills.",

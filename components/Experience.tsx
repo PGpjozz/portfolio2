@@ -6,39 +6,39 @@ import { Briefcase, Calendar, MapPin, ChevronRight } from "lucide-react";
 
 const experiences = [
   {
-    role: "Developer Intern",
-    company: "Greenrim Training Institute",
-    location: "South Africa",
-    period: "2023 – 2024",
-    type: "Internship",
+    role: "Full-Stack Developer",
+    company: "Freelance & Personal Projects",
+    location: "South Africa (Remote)",
+    period: "2024 – Present",
+    type: "Freelance",
     description:
-      "Completed a 12-month developer internship at Greenrim Training Institute, gaining hands-on experience building and maintaining real-world web applications across the full stack in a professional environment.",
+      "Building production-grade applications independently, including EduLink Intelligence — a multi-tenant school management SaaS platform with 5 user roles, full auth, billing, and real-time dashboards. Delivering web solutions for clients while continuously expanding my stack.",
     highlights: [
-      "Built and maintained internal web applications used daily by staff and students",
-      "Developed responsive UIs with HTML, CSS, JavaScript and React",
-      "Created and consumed RESTful APIs with Node.js and Express",
-      "Managed MySQL databases — schema design, queries and data integrity",
-      "Collaborated with the team using Git and GitHub for version control",
-      "Deployed projects to Vercel and assisted with basic server configuration",
+      "Independently designed and built EduLink Intelligence from scratch — deployed live on Vercel",
+      "Implemented multi-role NextAuth.js auth, Prisma ORM, and PostgreSQL (Neon) on EduLink",
+      "Built role-specific dashboards with MUI v7 and Recharts data visualisations",
+      "Delivered responsive landing pages and web apps for freelance clients",
+      "Managed full project lifecycle: architecture, development, deployment and maintenance",
     ],
-    tech: ["React", "Node.js", "Express", "MySQL", "JavaScript", "Git", "Vercel"],
+    tech: ["Next.js 16", "TypeScript", "Prisma", "PostgreSQL", "NextAuth.js", "MUI v7", "Recharts", "Vercel"],
     color: "from-indigo-500 to-violet-500",
   },
   {
-    role: "Freelance & Personal Projects",
-    company: "Self-Directed",
-    location: "Remote",
-    period: "2022 – 2023",
-    type: "Freelance",
+    role: "Self-Taught Developer",
+    company: "Personal Projects",
+    location: "South Africa",
+    period: "2022 – 2024",
+    type: "Self-Directed",
     description:
-      "Before joining Greenrim, I built a portfolio of personal and freelance projects to sharpen my skills — from landing pages for small businesses to full-stack CRUD applications.",
+      "Grew from the fundamentals to full-stack development through structured self-study, online curricula and hands-on building. Focused on mastering the modern JavaScript ecosystem.",
     highlights: [
-      "Built 10+ personal projects spanning frontend and backend",
-      "Designed and developed landing pages for local small businesses",
-      "Completed freeCodeCamp and The Odin Project curricula",
-      "Started learning React and Node.js through self-study",
+      "Completed freeCodeCamp and The Odin Project full-stack curricula",
+      "Built 10+ projects across frontend, backend and databases",
+      "Mastered HTML, CSS, JavaScript, then progressed to React, Node.js and SQL",
+      "Designed and shipped landing pages for local small businesses",
+      "Established strong Git/GitHub workflow and deployment practices",
     ],
-    tech: ["HTML", "CSS", "JavaScript", "React", "Node.js", "MongoDB"],
+    tech: ["HTML", "CSS", "JavaScript", "React", "Node.js", "Express", "MySQL", "MongoDB"],
     color: "from-violet-500 to-fuchsia-500",
   },
 ];
@@ -74,7 +74,7 @@ export default function Experience() {
               Work <span className="text-gradient">Experience</span>
             </h2>
             <p className="text-zinc-400 text-lg max-w-2xl mx-auto">
-              A decade of building products that people love, at scale
+              2 years of building real products through freelance work and self-directed projects
             </p>
           </motion.div>
 
