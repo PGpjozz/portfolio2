@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import { ExternalLink, Github, Star, GitFork, KeyRound } from "lucide-react";
+import { ExternalLink, Github, Star, GitFork, KeyRound, Crown } from "lucide-react";
 
 const filters = ["All", "Full-Stack", "Frontend", "Backend", "Open Source"];
 
@@ -175,8 +175,8 @@ export default function Projects() {
 
                 <div className="relative p-6">
                   {'flagship' in project && project.flagship && (
-                    <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-indigo-500/20 border border-indigo-500/30 text-indigo-300 text-xs font-mono font-medium mb-3">
-                      <span className="w-1.5 h-1.5 rounded-full bg-indigo-400 animate-pulse" />
+                    <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-amber-500/20 border border-amber-400/40 text-amber-300 text-xs font-mono font-medium mb-3">
+                      <Crown className="w-3.5 h-3.5 text-amber-400" />
                       Flagship Project
                     </div>
                   )}
