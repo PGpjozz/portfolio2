@@ -164,153 +164,129 @@ export default function Projects() {
             animate="visible"
             className="grid md:grid-cols-2 lg:grid-cols-3 gap-6"
           >
-            {filtered.map((project) => (
-              <motion.div
-                key={project.title}
-                variants={cardVariants}
-                layout
-                className={`relative rounded-2xl overflow-hidden gradient-border card-hover group ${'flagship' in project && project.flagship ? 'lg:col-span-1 ring-1 ring-indigo-500/40' : ''}`}
-              >
-                <div className={`absolute inset-0 bg-gradient-to-br ${project.gradient} opacity-60`} />
+            {filtered.map((project) => {
+              const isFlagship = 'flagship' in project && project.flagship;
+              return (
+                <motion.div
+                  key={project.title}
+                  variants={cardVariants}
+                  layout
+                  className={`relative rounded-2xl overflow-hidden gradient-border card-hover group ${isFlagship ? 'lg:col-span-3 ring-1 ring-amber-500/30' : ''
+                    }`}
+                >
+                  <div className={`absolute inset-0 bg-gradient-to-br ${project.gradient} opacity-60`} />
 
-                <div className="relative p-6">
-                  {'flagship' in project && project.flagship && (
-                    <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-amber-500/20 border border-amber-400/40 text-amber-300 text-xs font-mono font-medium mb-3">
-                      <Crown className="w-3.5 h-3.5 text-amber-400" />
-                      Flagship Project
-                    </div>
-                  )}
-                  <div className="flex items-start justify-between mb-4">
-                    <div>
-                      <h3 className="text-lg font-bold text-zinc-100 group-hover:text-white mb-1">
-                        {project.title}
-                      </h3>
-                      <div className="flex items-center gap-3 text-xs text-zinc-500 font-mono">
-                        <span className="flex items-center gap-1">
-                          <Star className="w-3 h-3 text-amber-400" />
-                          {formatCount(project.stars)}
-                        </span>
-                        <span className="flex items-center gap-1">
-                          <GitFork className="w-3 h-3" />
-                          {formatCount(project.forks)}
-                        </span>
-                      </div>
-                    </div>
-                    <div className="flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
-                      <a
-                        href={project.githubUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="p-2 rounded-lg glass border border-zinc-700/50 hover:border-indigo-500/40 text-zinc-400 hover:text-white transition-colors"
-                        aria-label="GitHub"
-                      >
-                        <Github className="w-4 h-4" />
-                      </a>
-                      <a
-                        href={project.liveUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="p-2 rounded-lg glass border border-zinc-700/50 hover:border-indigo-500/40 text-zinc-400 hover:text-white transition-colors"
-                        aria-label="Live Demo"
-                      >
-                        <ExternalLink className="w-4 h-4" />
-                      </a>
-                    </div>
-                  </div>
-
-                  <p className="text-zinc-400 text-sm leading-relaxed mb-5 line-clamp-3">
-                    {project.description}
-                  </p>
-
-                  <div className="flex flex-wrap gap-1.5 mb-4">
-                    {project.tech.map((t) => (
-                      <span
-                        key={t}
-                        className="px-2 py-0.5 rounded text-xs font-mono text-indigo-300/80 bg-indigo-500/10 border border-indigo-500/10"
-                      >
-                        {t}
-                      </span>
-                    ))}
-                  </div>
-
-                  {'credentials' in project && project.credentials && (
-                    <div className="mt-4 rounded-xl bg-zinc-900/70 border border-zinc-700/50 overflow-hidden">
-                      {/* Header */}
-                      <div className="px-4 py-2.5 border-b border-zinc-700/50 flex items-center gap-2">
-                        <KeyRound className="w-3.5 h-3.5 text-amber-400" />
-                        <span className="text-xs font-semibold text-zinc-300 uppercase tracking-wider">Test Login Credentials</span>
-                      </div>
-
-                      {/* Group 1 — Provider (different URL) */}
-                      <div className="px-4 py-3 border-b border-zinc-700/50">
-                        <p className="text-xs text-zinc-500 mb-2 font-mono">
-                          <span className="text-zinc-400 font-semibold">Provider role</span> — uses a separate sign-in page:
-                        </p>
-                        <a
-                          href="https://edulink-app-ten.vercel.app/auth/provider-signin"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-indigo-500/15 border border-indigo-500/30 text-indigo-300 text-xs font-mono hover:bg-indigo-500/25 transition-colors mb-3"
-                        >
-                          <ExternalLink className="w-3 h-3" />
-                          edulink-app-ten.vercel.app/auth/provider-signin
-                        </a>
-                        <table className="w-full text-xs font-mono">
-                          <thead>
-                            <tr className="border-b border-zinc-800/60">
-                              <th className="text-left py-1 text-zinc-600 font-normal">Role</th>
-                              <th className="text-left py-1 text-zinc-600 font-normal">Email</th>
-                              <th className="text-left py-1 text-zinc-600 font-normal">Password</th>
-                            </tr>
-                          </thead>
-                          <tbody>
-                            <tr>
-                              <td className="py-1.5 pr-3 text-violet-400">Provider</td>
-                              <td className="py-1.5 pr-3 text-emerald-400/90">provider@edulink.co.za</td>
-                              <td className="py-1.5 text-zinc-400">edulink2026</td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </div>
-
-                      {/* Group 2 — All other roles (standard URL) */}
-                      <div className="px-4 py-3">
-                        <p className="text-xs text-zinc-500 mb-2 font-mono">
-                          <span className="text-zinc-400 font-semibold">All other roles</span> — use the standard sign-in page:
-                        </p>
-                        <a
-                          href="https://edulink-app-ten.vercel.app/auth/signin"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-indigo-500/15 border border-indigo-500/30 text-indigo-300 text-xs font-mono hover:bg-indigo-500/25 transition-colors mb-3"
-                        >
-                          <ExternalLink className="w-3 h-3" />
-                          edulink-app-ten.vercel.app/auth/signin
-                        </a>
-                        <table className="w-full text-xs font-mono">
-                          <thead>
-                            <tr className="border-b border-zinc-800/60">
-                              <th className="text-left py-1 text-zinc-600 font-normal">Role</th>
-                              <th className="text-left py-1 text-zinc-600 font-normal">Email / ID</th>
-                              <th className="text-left py-1 text-zinc-600 font-normal">Password</th>
-                            </tr>
-                          </thead>
-                          <tbody>
-                            {project.credentials.filter((c) => c.role !== "Provider").map((c) => (
-                              <tr key={c.role} className="border-b border-zinc-800/40 last:border-0">
-                                <td className="py-1.5 pr-3 text-violet-400">{c.role}</td>
-                                <td className="py-1.5 pr-3 text-emerald-400/90 break-all">{c.login}</td>
-                                <td className="py-1.5 text-zinc-400">{c.password}</td>
-                              </tr>
+                  {isFlagship ? (
+                    /* ── Flagship: two-column layout ── */
+                    <div className="relative p-6 lg:p-8">
+                      <div className="grid lg:grid-cols-5 gap-8">
+                        {/* Left: info */}
+                        <div className="lg:col-span-3">
+                          <div className="flex items-center gap-3 mb-4">
+                            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-500/20 border border-amber-400/40 text-amber-300 text-xs font-mono font-semibold">
+                              <Crown className="w-3.5 h-3.5 text-amber-400" />
+                              Flagship Project
+                            </div>
+                          </div>
+                          <h3 className="text-2xl font-bold text-zinc-100 mb-2">{project.title}</h3>
+                          <p className="text-zinc-400 text-sm leading-relaxed mb-5">{project.description}</p>
+                          <div className="flex flex-wrap gap-1.5 mb-6">
+                            {project.tech.map((t) => (
+                              <span key={t} className="px-2.5 py-1 rounded-md text-xs font-mono text-indigo-300 bg-indigo-500/10 border border-indigo-500/20">{t}</span>
                             ))}
-                          </tbody>
-                        </table>
+                          </div>
+                          <div className="flex items-center gap-3">
+                            <a href={project.liveUrl} target="_blank" rel="noopener noreferrer"
+                              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-gradient-to-r from-indigo-500 to-violet-600 text-white text-sm font-semibold shadow-lg shadow-indigo-500/30 hover:shadow-indigo-500/50 transition-all duration-200">
+                              <ExternalLink className="w-4 h-4" /> Live App
+                            </a>
+                            <a href={project.githubUrl} target="_blank" rel="noopener noreferrer"
+                              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl glass border border-zinc-700 hover:border-indigo-500/40 text-zinc-300 hover:text-white text-sm font-semibold transition-all duration-200">
+                              <Github className="w-4 h-4" /> GitHub
+                            </a>
+                          </div>
+                        </div>
+
+                        {/* Right: credentials */}
+                        {'credentials' in project && project.credentials && (
+                          <div className="lg:col-span-2">
+                            <div className="rounded-xl bg-zinc-900/80 border border-zinc-700/50 overflow-hidden h-full">
+                              <div className="px-4 py-2.5 border-b border-zinc-700/50 flex items-center gap-2">
+                                <KeyRound className="w-3.5 h-3.5 text-amber-400" />
+                                <span className="text-xs font-semibold text-zinc-300 uppercase tracking-wider">Test Login Credentials</span>
+                              </div>
+                              <div className="px-4 py-3 border-b border-zinc-700/40">
+                                <p className="text-xs text-zinc-500 mb-1.5 font-mono"><span className="text-zinc-400 font-semibold">Provider</span> — separate page:</p>
+                                <a href="https://edulink-app-ten.vercel.app/auth/provider-signin" target="_blank" rel="noopener noreferrer"
+                                  className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-indigo-500/15 border border-indigo-500/30 text-indigo-300 text-xs font-mono hover:bg-indigo-500/25 transition-colors mb-2">
+                                  <ExternalLink className="w-3 h-3" /> /auth/provider-signin
+                                </a>
+                                <table className="w-full text-xs font-mono">
+                                  <tbody>
+                                    <tr>
+                                      <td className="py-1 pr-2 text-violet-400 w-20">Provider</td>
+                                      <td className="py-1 pr-2 text-emerald-400/90">provider@edulink.co.za</td>
+                                      <td className="py-1 text-zinc-400">edulink2026</td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                              </div>
+                              <div className="px-4 py-3">
+                                <p className="text-xs text-zinc-500 mb-1.5 font-mono"><span className="text-zinc-400 font-semibold">All other roles</span> — standard page:</p>
+                                <a href="https://edulink-app-ten.vercel.app/auth/signin" target="_blank" rel="noopener noreferrer"
+                                  className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-indigo-500/15 border border-indigo-500/30 text-indigo-300 text-xs font-mono hover:bg-indigo-500/25 transition-colors mb-2">
+                                  <ExternalLink className="w-3 h-3" /> /auth/signin
+                                </a>
+                                <table className="w-full text-xs font-mono">
+                                  <tbody>
+                                    {project.credentials.filter((c) => c.role !== 'Provider').map((c) => (
+                                      <tr key={c.role} className="border-t border-zinc-800/40 first:border-0">
+                                        <td className="py-1.5 pr-2 text-violet-400 w-20">{c.role}</td>
+                                        <td className="py-1.5 pr-2 text-emerald-400/90 break-all">{c.login}</td>
+                                        <td className="py-1.5 text-zinc-400">{c.password}</td>
+                                      </tr>
+                                    ))}
+                                  </tbody>
+                                </table>
+                              </div>
+                            </div>
+                          </div>
+                        )}
+                      </div>
+                    </div>
+                  ) : (
+                    /* ── Regular card ── */
+                    <div className="relative p-6">
+                      <div className="flex items-start justify-between mb-4">
+                        <div>
+                          <h3 className="text-lg font-bold text-zinc-100 group-hover:text-white mb-1">{project.title}</h3>
+                          <div className="flex items-center gap-3 text-xs text-zinc-500 font-mono">
+                            <span className="flex items-center gap-1"><Star className="w-3 h-3 text-amber-400" />{formatCount(project.stars)}</span>
+                            <span className="flex items-center gap-1"><GitFork className="w-3 h-3" />{formatCount(project.forks)}</span>
+                          </div>
+                        </div>
+                        <div className="flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+                          <a href={project.githubUrl} target="_blank" rel="noopener noreferrer"
+                            className="p-2 rounded-lg glass border border-zinc-700/50 hover:border-indigo-500/40 text-zinc-400 hover:text-white transition-colors" aria-label="GitHub">
+                            <Github className="w-4 h-4" />
+                          </a>
+                          <a href={project.liveUrl} target="_blank" rel="noopener noreferrer"
+                            className="p-2 rounded-lg glass border border-zinc-700/50 hover:border-indigo-500/40 text-zinc-400 hover:text-white transition-colors" aria-label="Live Demo">
+                            <ExternalLink className="w-4 h-4" />
+                          </a>
+                        </div>
+                      </div>
+                      <p className="text-zinc-400 text-sm leading-relaxed mb-5 line-clamp-3">{project.description}</p>
+                      <div className="flex flex-wrap gap-1.5">
+                        {project.tech.map((t) => (
+                          <span key={t} className="px-2 py-0.5 rounded text-xs font-mono text-indigo-300/80 bg-indigo-500/10 border border-indigo-500/10">{t}</span>
+                        ))}
                       </div>
                     </div>
                   )}
-                </div>
-              </motion.div>
-            ))}
+                </motion.div>
+              );
+            })}
           </motion.div>
         </AnimatePresence>
 

@@ -214,26 +214,26 @@ export default function Hero() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 1.5, duration: 0.5 }}
-                className="absolute -bottom-4 -left-4 glass border border-zinc-700/50 rounded-xl px-4 py-2.5 flex items-center gap-2 shadow-xl"
+                className="absolute -bottom-4 -left-4 glass border border-emerald-500/30 rounded-xl px-4 py-2.5 flex items-center gap-2.5 shadow-xl"
               >
-                <span className="text-lg">🔥</span>
+                <div className="w-8 h-8 rounded-lg bg-emerald-500/20 flex items-center justify-center text-base">🎓</div>
                 <div>
-                  <div className="text-xs font-mono text-zinc-400">GitHub</div>
-                  <div className="text-sm font-bold text-white">PGpjozz</div>
+                  <div className="text-xs font-mono text-zinc-400">VUT Diploma</div>
+                  <div className="text-sm font-bold text-white">IT Graduate 2025</div>
                 </div>
               </motion.div>
 
-              {/* Floating badge: open source stars */}
+              {/* Floating badge: open to work */}
               <motion.div
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 1.7, duration: 0.5 }}
-                className="absolute -top-4 -right-4 glass border border-zinc-700/50 rounded-xl px-4 py-2.5 flex items-center gap-2 shadow-xl"
+                className="absolute -top-4 -right-4 glass border border-indigo-500/30 rounded-xl px-4 py-2.5 flex items-center gap-2.5 shadow-xl"
               >
-                <span className="text-lg">⭐</span>
+                <div className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
                 <div>
-                  <div className="text-xs font-mono text-zinc-400">Open to work</div>
-                  <div className="text-sm font-bold text-white">Hire me 🚀</div>
+                  <div className="text-xs font-mono text-zinc-400">Status</div>
+                  <div className="text-sm font-bold text-emerald-300">Open to Work</div>
                 </div>
               </motion.div>
             </div>

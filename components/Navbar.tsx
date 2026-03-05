@@ -100,16 +100,15 @@ export default function Navbar() {
           </ul>
 
           <div className="hidden md:flex items-center gap-3">
-            <motion.a
-              href="/resume.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
+            <motion.button
+              onClick={() => { const el = document.querySelector('#contact'); if (el) el.scrollIntoView({ behavior: 'smooth' }); }}
               whileHover={{ scale: 1.04 }}
               whileTap={{ scale: 0.97 }}
-              className="px-4 py-2 text-sm font-medium rounded-lg bg-gradient-to-r from-indigo-500 to-violet-600 text-white shadow-lg shadow-indigo-500/25 hover:shadow-indigo-500/40 transition-shadow duration-200"
+              className="flex items-center gap-1.5 px-4 py-2 text-sm font-semibold rounded-lg bg-gradient-to-r from-indigo-500 to-violet-600 text-white shadow-lg shadow-indigo-500/25 hover:shadow-indigo-500/40 transition-shadow duration-200"
             >
-              Resume
-            </motion.a>
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+              Hire Me
+            </motion.button>
           </div>
 
           <button
@@ -141,14 +140,12 @@ export default function Navbar() {
                   {link.label}
                 </button>
               ))}
-              <a
-                href="/resume.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
+              <button
+                onClick={() => { setMobileOpen(false); const el = document.querySelector('#contact'); if (el) el.scrollIntoView({ behavior: 'smooth' }); }}
                 className="mt-2 px-4 py-3 rounded-lg bg-gradient-to-r from-indigo-500 to-violet-600 text-white font-medium text-center"
               >
-                My CV
-              </a>
+                Hire Me
+              </button>
             </div>
           </motion.div>
         )}
