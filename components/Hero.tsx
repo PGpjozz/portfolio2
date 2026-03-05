@@ -98,7 +98,7 @@ export default function Hero() {
               className="text-base text-zinc-400 max-w-lg mb-10 leading-relaxed"
             >
               A driven developer with <span className="text-indigo-400 font-semibold">2 years</span> of hands-on experience building
-              modern web applications. Trained at Greenrim Training Institute and passionate about
+              modern web applications through freelance work and personal projects. Passionate about
               clean code, great UX, and growing every day.
             </motion.p>
 
